@@ -7,8 +7,13 @@
 
 | Language | # of Students |
 | -- | -- |
-| Assembly | 0 |
-
+| Javascript | 3 |
+| Python | 7 |
+| C  | 3 |
+| C++ | 1 |
+| Java | 3 |
+| Ruby | 1 |
+| H | 1 |
 ((more rows to complete the table))
 
 ## Answer

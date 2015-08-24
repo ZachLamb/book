@@ -4,24 +4,24 @@
 * Discuss and determine a ranking in terms of "bigness".
 * Fill the template below. Replace all (( )) with your answers.
 
-## Rank 1: ((name of the dataset))
+## Rank 1: ((Stock Market))
 
-(( a brief description of the dataset))
+((Biggest impact through value))
 
-((a brief justification why this dataset is bigger than the next one))
+((Is more impactful in today's society))
 
-## Rank 2: ((name of the dataset))
+## Rank 2: ((Weather))
 
-(( a brief description of the dataset))
+((Atmosphere and accumulation of element sources))
 
-((a brief justification why this dataset is bigger than the next one))
+((Weather's velocity is bigger than Healthcare))
 
-## Rank 3: ((name of the dataset))
+## Rank 3: ((Search Engines))
 
-(( a brief description of the dataset))
+((Rankings, web crawling, and media))
 
-((a brief justification why this dataset is bigger than the next one))
+((Search engines reaches more people than healthcare))
 
-## Rank 4: ((name of the dataset))
+## Rank 4: ((Healthcare))
 
-(( a brief description of the dataset))
+(( medical records))
