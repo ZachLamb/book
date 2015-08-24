@@ -6,10 +6,10 @@ for making the decision.
 
 From the class discussion, we wrote down five specific questions that are particularly interesting.
 
-* ((question))
-* ((question))
-* ((question))
-* ((question))
-* ((question))
+* How big is the community behind the framekwork?
+* How many packages/libraries are available?
+* Is there big cross-platform support?
+* How easy is it to learn?
+* How popular is it?
 
 From the above list, my team chose a question, worked on it, and created a report on the next page.

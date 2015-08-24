@@ -2,9 +2,15 @@
 
 ## Data
 
-* Manually collect data from online resources
-
-((Markdown table))
+| Language | # of packages |
+| -- | -- |
+| Python | 7 |
+| Javascript | 3 |
+| C  | 3 |
+| C++ | 1 |
+| Java | 3 |
+| Ruby | 1 |
+| H | 1 |
 
 ## Top five
 
