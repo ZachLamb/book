@@ -1,4 +1,6 @@
 # Lodash 101
+// load the modern build 
+var _ = require('lodash');
 
 [Lodash](https://lodash.com/docs) is one of the most popular utility-belt library.
 It can make you very productive and effective in writing Javascript programs.
@@ -12,7 +14,7 @@ was it downloaded just last week alone?
 
 {% set data = [1,2,3,4,5] %}
 
-Let's create a data array withthe contents: {{data}}. This array has {{ data.length }} items.
+Let's create a data array with the contents: {{data}}. This array has {{ data.length }} items.
 
 To get the first item, we can use lodash's [_.first](https://lodash.com/docs#first).
 
@@ -84,9 +86,7 @@ The data is
 ### Q: What are the ages of these people?
 
 {% lodash %}
-// replace this code with your solution that uses lodash
-var result = [45, 32, 54, 12]
-return result
+return _.pluck(data, 'age')
 {% endlodash %}
 
 The names are {{ result }}
@@ -96,8 +96,7 @@ The names are {{ result }}
 {% lodash %}
 // replace this code with your solution that uses lodash
 // hint: use _.pluck and _.min
-var result = 12
-return result
+return _.min(_.pluck(data, 'age'))
 {% endlodash %}
 
 The youngest age is {{ result }}.
@@ -106,8 +105,7 @@ The youngest age is {{ result }}.
 
 {% lodash %}
 // replace this code with your solution that uses lodash
-var result = 54
-return result
+return _.max(_.pluck(data, 'age'))
 {% endlodash %}
 
 The oldest age is {{ result }}.
@@ -117,8 +115,7 @@ The oldest age is {{ result }}.
 {% lodash %}
 // replace this code with your solution that uses lodash
 // hint: use your previous solution with _.find
-var result = data[3]
-return result
+ return _.find(data, {age: _.min(_.pluck(data, 'age'))})
 {% endlodash %}
 
 The youngest person is {{ result.name }}.
