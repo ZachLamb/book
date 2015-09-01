@@ -8,7 +8,11 @@ more challenges analyses.
 ## How many students like sushi as their favorite food?
 
 {% lodash %}
-return "[answer]"
+
+ var bodies = _.pluck(data.comments,'body')
+ console.log(bodies)
+ var x = _.map(bodies,functional( item)){return _.last(item.split('Food:'))}
+ console.log(x)
 {% endlodash %}
 
 The answer is {{result}}.
