@@ -17,32 +17,28 @@ including the controls, widgets ...etc.
 
 # How big the deal Tableau really is?
 
-(write your answer based on the statistics you can find online)
+"223% between 2012 and 2014 to $412.6 million and climbed 75% in the first quarter to $130 million" from Forbes
 
-# (Question 1)
+# Favorite Languages
 
-![screenshot](screenshot.png)
+![screenshot](favelang.PNG)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+(The Pie chart shows that Python was the most popular. In the bottom left hand corner, you can see the colors associated with each language. Blues are C/C++)
 
-# (Question 2)
+# Commented Before class
 
-![screenshot](screenshot.png)
+![screenshot](created.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+()
 
-# (Question 3)
+# Updated Comment
 
-![screenshot](screenshot.png)
+![screenshot](updated.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+()
 
-# (Question 4)
+# % that are CS Majors
 
-![screenshot](screenshot.png)
+![screenshot](csmajor.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+Another pie chart with major assocaited by color shown in bottom left hand corner
