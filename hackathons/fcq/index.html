@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Data | book</title>
+        <title>FCQ | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/warmup.html" />
+    <link rel="next" href="../../hackathons/fcq/warmup.html" />
     
     
-    <link rel="prev" href="../../hackathons/classmates/index.html" />
+    <link rel="prev" href="../../hackathons/classmates/report.html" />
     
 
         <!-- head:end -->
@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.1" data-basepath="../.." data-revision="Sun Sep 27 2015 23:15:27 GMT-0600 (MDT)">
+    <div class="book" data-level="2.3" data-basepath="../.." data-revision="Sun Sep 27 2015 23:15:27 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -556,7 +556,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.2.1" data-path="hackathons/classmates/data.html">
+        <li class="chapter " data-level="2.2.1" data-path="hackathons/classmates/data.html">
             
                 
                     <a href="../../hackathons/classmates/data.html">
@@ -621,7 +621,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="hackathons/fcq/index.html">
+        <li class="chapter active" data-level="2.3" data-path="hackathons/fcq/index.html">
             
                 
                     <a href="../../hackathons/fcq/index.html">
@@ -818,107 +818,122 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="data">Data</h1>
-<p>There are 26 comments.</p>
-<p>The raw data is in the JSON format and is shown below.</p>
-<pre style="font-size:11px;line-height:1;max-height:300px;">[
- {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133203904&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133203904&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133203904,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;willzfarmer&quot;,
-   &quot;id&quot;: 546524,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/546524?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/willzfarmer&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/willzfarmer&quot;,
-   &quot;followers_url&quot;: &quot;https://api.github.com/users/willzfarmer/followers&quot;,
-   &quot;following_url&quot;: &quot;https://api.github.com/users/willzfarmer/following{/other_user}&quot;,
-   &quot;gists_url&quot;: &quot;https://api.github.com/users/willzfarmer/gists{/gist_id}&quot;,
-   &quot;starred_url&quot;: &quot;https://api.github.com/users/willzfarmer/starred{/owner}{/repo}&quot;,
-   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/willzfarmer/subscriptions&quot;,
-   &quot;organizations_url&quot;: &quot;https://api.github.com/users/willzfarmer/orgs&quot;,
-   &quot;repos_url&quot;: &quot;https://api.github.com/users/willzfarmer/repos&quot;,
-   &quot;events_url&quot;: &quot;https://api.github.com/users/willzfarmer/events{/privacy}&quot;,
-   &quot;received_events_url&quot;: &quot;https://api.github.com/users/willzfarmer/received_events&quot;,
-   &quot;type&quot;: &quot;User&quot;,
-   &quot;site_admin&quot;: false
-  },
-  &quot;created_at&quot;: &quot;2015-08-20T22:39:50Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-08-20T22:39:50Z&quot;,
-  &quot;body&quot;: &quot;Name: William Farmer\r\nMajor: Applied Math w/ Minor in Computer Science\r\nFavorite Programming Language: Python\r\nFavorite Food: Sushi&quot;
+                        <p></p>
+<h1 id="fcq">FCQ</h1>
+<p>The objective of today&apos;s hackathon is to produce a data-driven report
+to provide some insight into the FCQ data. We&apos;ve prepared a slice of the dataset.
+There are 5000 records in this slice.</p>
+<p>The first record looks like</p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">{
+ &quot;AVG_GRD&quot;: 2.98,
+ &quot;Activity_Type&quot;: &quot;LEC - Lecture&quot;,
+ &quot;AvgCourse&quot;: 5.4,
+ &quot;AvgInstructor&quot;: 5.6,
+ &quot;Course&quot;: &quot;4808&quot;,
+ &quot;CourseTitle&quot;: &quot;Special Topics in World Areas History&quot;,
+ &quot;CrsLvlNum&quot;: &quot;4XXX&quot;,
+ &quot;CrsPBAColl&quot;: &quot;AS&quot;,
+ &quot;CrsPBADept&quot;: &quot;HIST&quot;,
+ &quot;CrsPBADiv&quot;: &quot;AH&quot;,
+ &quot;Honors&quot;: &quot;0&quot;,
+ &quot;Hours&quot;: 3,
+ &quot;Instruction_Mode&quot;: &quot;P  - In Person&quot;,
+ &quot;Level&quot;: &quot;Upper&quot;,
+ &quot;NComb&quot;: 2,
+ &quot;NIntrFCQ&quot;: 1,
+ &quot;N&quot;: {
+  &quot;ENROLL&quot;: 16,
+  &quot;EOT&quot;: 16,
+  &quot;GRADE&quot;: 16,
+  &quot;INCOMP&quot;: 0,
+  &quot;NOCRED&quot;: 0,
+  &quot;PASS&quot;: 0,
+  &quot;Ret&quot;: 15
  },
- {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133227037&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133227037&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133227037,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;twagar95&quot;,
-   &quot;id&quot;: 10174237,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/10174237?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/twagar95&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/twagar95&quot;,
-   &quot;followers_url&quot;: &quot;https://api.github.com/users/twagar95/followers&quot;,
-   &quot;following_url&quot;: &quot;https://api.github.com/users/twagar95/following{/other_user}&quot;,
-   &quot;gists_url&quot;: &quot;https://api.github.com/users/twagar95/gists{/gist_id}&quot;,
-   &quot;starred_url&quot;: &quot;https://api.github.com/users/twagar95/starred{/owner}{/repo}&quot;,
-   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/twagar95/subscriptions&quot;,
-   &quot;organizations_url&quot;: &quot;https://api.github.com/users/twagar95/orgs&quot;,
-   &quot;repos_url&quot;: &quot;https://api.github.com/users/twagar95/repos&quot;,
-   &quot;events_url&quot;: &quot;https://api.github.com/users/twagar95/events{/privacy}&quot;,
-   &quot;received_events_url&quot;: &quot;https://api.github.com/users/twagar95/received_events&quot;,
-   &quot;type&quot;: &quot;User&quot;,
-   &quot;site_admin&quot;: false
-  },
-  &quot;created_at&quot;: &quot;2015-08-21T00:32:27Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-08-21T00:32:27Z&quot;,
-  &quot;body&quot;: &quot;Name: Tristan Wagar\r\nMajor: Computer Science\r\nFavorite Programming Language: Javascript\r\nFavorite Food: Steak&quot;
+ &quot;PCT&quot;: {
+  &quot;A&quot;: 0.31,
+  &quot;B&quot;: 0.5,
+  &quot;C&quot;: 0.12,
+  &quot;C_MINUS_OR_BELOW&quot;: 0.06,
+  &quot;D&quot;: 0,
+  &quot;DF&quot;: 0.06,
+  &quot;F&quot;: 0.06,
+  &quot;GRADE&quot;: 1,
+  &quot;INCOMP&quot;: 0,
+  &quot;WDRAW&quot;: 0
  },
- {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133571232&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133571232&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133571232,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;Malaokia&quot;,
-   &quot;id&quot;: 10319733,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/10319733?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/Malaokia&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/Malaokia&quot;,
-   &quot;followers_url&quot;: &quot;https://api.github.com/users/Malaokia/followers&quot;,
-   &quot;following_url&quot;: &quot;https://api.github.com/users/Malaokia/following{/other_user}&quot;,
-   &quot;gists_url&quot;: &quot;https://api.github.com/users/Malaokia/gists{/gist_id}&quot;,
-   &quot;starred_url&quot;: &quot;https://api.github.com/users/Malaokia/starred{/owner}{/repo}&quot;,
-   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/Malaokia/subscriptions&quot;,
-   &quot;organizations_url&quot;: &quot;https://api.github.com/users/Malaokia/orgs&quot;,
-   &quot;repos_url&quot;: &quot;https://api.github.com/users/Malaokia/repos&quot;,
-   &quot;events_url&quot;: &quot;https://api.github.com/users/Malaokia/events{/privacy}&quot;,
-   &quot;received_events_url&quot;: &quot;https://api.github.com/users/Malaokia/received_events&quot;,
-   &quot;type&quot;: &quot;User&quot;,
-   &quot;site_admin&quot;: false
-  },
-  &quot;created_at&quot;: &quot;2015-08-21T21:44:26Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-08-21T21:44:26Z&quot;,
-  &quot;body&quot;: &quot;Name: Mingqi Liew\r\nMajor: Computer Science\r\nFavorite Programming Language: C\r\nFavorite Food: Thai food&quot;
+ &quot;RAP&quot;: &quot;0&quot;,
+ &quot;Section&quot;: &quot;001&quot;,
+ &quot;Subject&quot;: &quot;HIST&quot;,
+ &quot;Subject_Label&quot;: &quot;History&quot;,
+ &quot;Workload&quot;: {
+  &quot;Hrs_Wk&quot;: &quot;7-9&quot;,
+  &quot;Raw&quot;: &quot;3.40&quot;
  },
- {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133776171&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133776171&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133776171,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;fadhilfath&quot;,
-   &quot;id&quot;: 5599246,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/5599246?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/fadhilfath&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/fadhilfath&quot;,
-   &quot;followers_url&quot;: &quot;https://api.githu</pre>
+ &quot;YearTerm&quot;: &quot;20137&quot;,
+ &quot;Instructors&quot;: [
+  {
+   &quot;group&quot;: &quot;1 TTT&quot;,
+   &quot;name&quot;: &quot;MOJOLA, SANYU AMIMO&quot;,
+   &quot;title&quot;: &quot;ASST PROFESSOR&quot;
+  },
+  {
+   &quot;group&quot;: &quot;1 TTT&quot;,
+   &quot;name&quot;: &quot;OSBORNE, MYLES GREGORY&quot;,
+   &quot;title&quot;: &quot;ASST PROFESSOR&quot;
+  }
+ ]
+}</pre>
+
+<h2 id="examples">Examples</h2>
+<p>Study the following examples of aggregate analysis across colleges based
+on the <code>CrsPBAColl</code> field.</p>
+<h3 id="how-many-courses-have-a-valid-college-code">How many courses have a valid college code?</h3>
+<p><pre><code>return _.filter(data, function(d){
+            return d[&apos;CrsPBAColl&apos;]
+        })</code></pre></p>
+<p>The answer is 4981.</p>
+<h2 id="what-are-the-unique-college-codes">What are the unique college codes?</h2>
+<p><pre><code>return _.compact(_.uniq(_.pluck(data, &apos;CrsPBAColl&apos;)))</code></pre></p>
+<p>They are AS,BU,EB,EN,GR,JR,LW,MB,XX,AP.</p>
+<h2 id="what-is-the-distribution-of-the-courses-across-colleges">What is the distribution of the courses across colleges?</h2>
+<p><pre><code>var grps = _.groupBy(data, &apos;CrsPBAColl&apos;)
+return _.mapValues(grps, function(d){
+    return d.length
+})</code></pre></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">{
+ &quot;AS&quot;: 3237,
+ &quot;BU&quot;: 378,
+ &quot;EB&quot;: 139,
+ &quot;EN&quot;: 573,
+ &quot;GR&quot;: 51,
+ &quot;JR&quot;: 96,
+ &quot;LW&quot;: 176,
+ &quot;MB&quot;: 241,
+ &quot;XX&quot;: 30,
+ &quot;undefined&quot;: 19,
+ &quot;AP&quot;: 60
+}</pre>
+
+<h2 id="what-are-the-total-student-enrollments-compared-across-colleges">What are the total student enrollments compared across colleges?</h2>
+<p><pre><code>var grps = _.groupBy(data, &apos;CrsPBAColl&apos;)
+return _.mapValues(grps, function(d){
+    var enrollNumbers = _.pluck(d, &apos;N.ENROLL&apos;)
+    return _.sum(enrollNumbers)
+})</code></pre></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">{
+ &quot;AS&quot;: 119563,
+ &quot;BU&quot;: 17523,
+ &quot;EB&quot;: 3198,
+ &quot;EN&quot;: 27047,
+ &quot;GR&quot;: 1177,
+ &quot;JR&quot;: 2982,
+ &quot;LW&quot;: 5166,
+ &quot;MB&quot;: 7034,
+ &quot;XX&quot;: 559,
+ &quot;undefined&quot;: 384,
+ &quot;AP&quot;: 1400
+}</pre>
 
                     
                     </section>
@@ -929,10 +944,10 @@
         </div>
 
         
-        <a href="../../hackathons/classmates/index.html" class="navigation navigation-prev " aria-label="Previous page: Classmates"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/classmates/report.html" class="navigation navigation-prev " aria-label="Previous page: Report"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/classmates/warmup.html" class="navigation navigation-next " aria-label="Next page: Warmup"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/fcq/warmup.html" class="navigation navigation-next " aria-label="Next page: Warmup"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

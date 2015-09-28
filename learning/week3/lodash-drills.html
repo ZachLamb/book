@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Data | book</title>
+        <title>Lodash Drills | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/warmup.html" />
+    <link rel="next" href="../../learning/week3/lodash-groupby.html" />
     
     
-    <link rel="prev" href="../../hackathons/classmates/index.html" />
+    <link rel="prev" href="../../learning/week3/github-api.html" />
     
 
         <!-- head:end -->
@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.1" data-basepath="../.." data-revision="Sun Sep 27 2015 23:15:27 GMT-0600 (MDT)">
+    <div class="book" data-level="1.4.2" data-basepath="../.." data-revision="Sun Sep 27 2015 23:15:27 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -301,7 +301,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="learning/week3/lodash-drills.html">
+        <li class="chapter active" data-level="1.4.2" data-path="learning/week3/lodash-drills.html">
             
                 
                     <a href="../../learning/week3/lodash-drills.html">
@@ -556,7 +556,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.2.1" data-path="hackathons/classmates/data.html">
+        <li class="chapter " data-level="2.2.1" data-path="hackathons/classmates/data.html">
             
                 
                     <a href="../../hackathons/classmates/data.html">
@@ -818,107 +818,126 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="data">Data</h1>
-<p>There are 26 comments.</p>
-<p>The raw data is in the JSON format and is shown below.</p>
-<pre style="font-size:11px;line-height:1;max-height:300px;">[
- {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133203904&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133203904&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133203904,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;willzfarmer&quot;,
-   &quot;id&quot;: 546524,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/546524?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/willzfarmer&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/willzfarmer&quot;,
-   &quot;followers_url&quot;: &quot;https://api.github.com/users/willzfarmer/followers&quot;,
-   &quot;following_url&quot;: &quot;https://api.github.com/users/willzfarmer/following{/other_user}&quot;,
-   &quot;gists_url&quot;: &quot;https://api.github.com/users/willzfarmer/gists{/gist_id}&quot;,
-   &quot;starred_url&quot;: &quot;https://api.github.com/users/willzfarmer/starred{/owner}{/repo}&quot;,
-   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/willzfarmer/subscriptions&quot;,
-   &quot;organizations_url&quot;: &quot;https://api.github.com/users/willzfarmer/orgs&quot;,
-   &quot;repos_url&quot;: &quot;https://api.github.com/users/willzfarmer/repos&quot;,
-   &quot;events_url&quot;: &quot;https://api.github.com/users/willzfarmer/events{/privacy}&quot;,
-   &quot;received_events_url&quot;: &quot;https://api.github.com/users/willzfarmer/received_events&quot;,
-   &quot;type&quot;: &quot;User&quot;,
-   &quot;site_admin&quot;: false
+                        <h1 id="lodash-drills">Lodash Drills</h1>
+<p>Complete the following Lodash exercises. The goal is to become really good at
+functional programming paradigm (e.g., <code>_.map</code>, <code>_.filter</code>, <code>_.all</code>, <code>_.any</code> ...etc) and
+a number of really useful Lodash methods (e.g., <code>_.find</code>, <code>_.pluck</code> ... etc).</p>
+<ul>
+<li>enter your solution in the <code>solution</code> block</li>
+<li>utilize lodash functions as much as possible</li>
+<li>no <code>for/while</code> loop is allowed</li>
+</ul>
+<p>Familiarity with programming in this way will not only make you a super productive
+programmer but also will pave the way for you to learn MapReduce and MongoDB.</p>
+<h1 id="examples">Examples</h1>
+<p></p><h2>How many people?</h2><div class="lodashexercise">   <div class="result"></div><div class="ok">Done</div><div class="section-title">Data</div><pre>[{name: &apos;John&apos;}, {name: &apos;Mary&apos;}, {name: &apos;Joe&apos;}, {name: &apos;Ben&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>4</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>4</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">return</span> data.length</pre></div><p></p>
+<p></p><h2>What are the names?</h2><div class="lodashexercise">   <div class="result"></div><div class="ok">Done</div><div class="section-title">Data</div><pre>[{name: &apos;John&apos;}, {name: &apos;Mary&apos;}, {name: &apos;Joe&apos;}, {name: &apos;Ben&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>[
+  &quot;John&quot;,
+  &quot;Mary&quot;,
+  &quot;Joe&quot;,
+  &quot;Ben&quot;
+]</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>[
+  &quot;John&quot;,
+  &quot;Mary&quot;,
+  &quot;Joe&quot;,
+  &quot;Ben&quot;
+]</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">return</span> _.map(data, <span class="keyword">function</span>(d){
+    <span class="keyword">return</span> d.name
+})</pre></div><p></p>
+<h1 id="exercises">Exercises</h1>
+<p></p><h2>What names begin with the letter J?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John&apos;}, {name: &apos;Mary&apos;}, {name: &apos;Joe&apos;}, {name: &apos;Ben&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>[
+  &quot;John&quot;,
+  &quot;Joe&quot;
+]</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>How many Johns?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John&apos;}, {name: &apos;John&apos;}, {name: &apos;John&apos;}, {name: &apos;Ben&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>3</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>What are all the first names?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;}, {name: &apos;Mary Kay&apos;}, {name: &apos;Peter Pan&apos;}, {name: &apos;Ben Franklin&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>[
+  &quot;John&quot;,
+  &quot;Mary&quot;,
+  &quot;Peter&quot;,
+  &quot;Ben&quot;
+]</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>What are the first names of Smith?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;}, {name: &apos;Mary Smith&apos;}, {name: &apos;Peter Pan&apos;}, {name: &apos;Ben Smith&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>[
+  &quot;John&quot;,
+  &quot;Mary&quot;,
+  &quot;Ben&quot;
+]</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>Change the format to lastname, firstname</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;}, {name: &apos;Mary Kay&apos;}, {name: &apos;Peter Pan&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>[
+  {
+    &quot;name&quot;: &quot;Smith, John&quot;
   },
-  &quot;created_at&quot;: &quot;2015-08-20T22:39:50Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-08-20T22:39:50Z&quot;,
-  &quot;body&quot;: &quot;Name: William Farmer\r\nMajor: Applied Math w/ Minor in Computer Science\r\nFavorite Programming Language: Python\r\nFavorite Food: Sushi&quot;
- },
- {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133227037&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133227037&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133227037,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;twagar95&quot;,
-   &quot;id&quot;: 10174237,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/10174237?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/twagar95&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/twagar95&quot;,
-   &quot;followers_url&quot;: &quot;https://api.github.com/users/twagar95/followers&quot;,
-   &quot;following_url&quot;: &quot;https://api.github.com/users/twagar95/following{/other_user}&quot;,
-   &quot;gists_url&quot;: &quot;https://api.github.com/users/twagar95/gists{/gist_id}&quot;,
-   &quot;starred_url&quot;: &quot;https://api.github.com/users/twagar95/starred{/owner}{/repo}&quot;,
-   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/twagar95/subscriptions&quot;,
-   &quot;organizations_url&quot;: &quot;https://api.github.com/users/twagar95/orgs&quot;,
-   &quot;repos_url&quot;: &quot;https://api.github.com/users/twagar95/repos&quot;,
-   &quot;events_url&quot;: &quot;https://api.github.com/users/twagar95/events{/privacy}&quot;,
-   &quot;received_events_url&quot;: &quot;https://api.github.com/users/twagar95/received_events&quot;,
-   &quot;type&quot;: &quot;User&quot;,
-   &quot;site_admin&quot;: false
+  {
+    &quot;name&quot;: &quot;Kay, Mary&quot;
   },
-  &quot;created_at&quot;: &quot;2015-08-21T00:32:27Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-08-21T00:32:27Z&quot;,
-  &quot;body&quot;: &quot;Name: Tristan Wagar\r\nMajor: Computer Science\r\nFavorite Programming Language: Javascript\r\nFavorite Food: Steak&quot;
- },
- {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133571232&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133571232&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133571232,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;Malaokia&quot;,
-   &quot;id&quot;: 10319733,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/10319733?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/Malaokia&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/Malaokia&quot;,
-   &quot;followers_url&quot;: &quot;https://api.github.com/users/Malaokia/followers&quot;,
-   &quot;following_url&quot;: &quot;https://api.github.com/users/Malaokia/following{/other_user}&quot;,
-   &quot;gists_url&quot;: &quot;https://api.github.com/users/Malaokia/gists{/gist_id}&quot;,
-   &quot;starred_url&quot;: &quot;https://api.github.com/users/Malaokia/starred{/owner}{/repo}&quot;,
-   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/Malaokia/subscriptions&quot;,
-   &quot;organizations_url&quot;: &quot;https://api.github.com/users/Malaokia/orgs&quot;,
-   &quot;repos_url&quot;: &quot;https://api.github.com/users/Malaokia/repos&quot;,
-   &quot;events_url&quot;: &quot;https://api.github.com/users/Malaokia/events{/privacy}&quot;,
-   &quot;received_events_url&quot;: &quot;https://api.github.com/users/Malaokia/received_events&quot;,
-   &quot;type&quot;: &quot;User&quot;,
-   &quot;site_admin&quot;: false
-  },
-  &quot;created_at&quot;: &quot;2015-08-21T21:44:26Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-08-21T21:44:26Z&quot;,
-  &quot;body&quot;: &quot;Name: Mingqi Liew\r\nMajor: Computer Science\r\nFavorite Programming Language: C\r\nFavorite Food: Thai food&quot;
- },
- {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133776171&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133776171&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133776171,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;fadhilfath&quot;,
-   &quot;id&quot;: 5599246,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/5599246?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/fadhilfath&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/fadhilfath&quot;,
-   &quot;followers_url&quot;: &quot;https://api.githu</pre>
+  {
+    &quot;name&quot;: &quot;Pan, Peter&quot;
+  }
+]</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>How many women?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, gender: &apos;m&apos;}, {name: &apos;Mary Smith&apos;, gender: &apos;f&apos;}, {name: &apos;Peter Pan&apos;, gender: &apos;m&apos;}, {name: &apos;Ben Smith&apos;, gender: &apos;m&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>1</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>How many men whose last name is Smith?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, gender: &apos;m&apos;}, {name: &apos;Mary Smith&apos;, gender: &apos;f&apos;}, {name: &apos;Peter Pan&apos;, gender: &apos;m&apos;}, {name: &apos;Ben Smith&apos;, gender: &apos;m&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>2</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2></h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, gender: &apos;m&apos;}, {name: &apos;Mary Smith&apos;, gender: &apos;f&apos;}, {name: &apos;Peter Pan&apos;, gender: &apos;m&apos;}, {name: &apos;Ben Smith&apos;, gender: &apos;m&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>true</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>What is Peter Pan&apos;s gender?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, gender: &apos;m&apos;}, {name: &apos;Mary Smith&apos;, gender: &apos;f&apos;}, {name: &apos;Peter Pan&apos;, gender: &apos;m&apos;}, {name: &apos;Ben Smith&apos;, gender: &apos;m&apos;}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>&quot;m&quot;</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>What is the oldest age?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, age: 54}, {name: &apos;Mary Smith&apos;, age: 42}, {name: &apos;Peter Pan&apos;, age: 15}, {name: &apos;Ben Smith&apos;, age: 35}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>54</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>Is it true everyone is younger than 60?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, age: 54}, {name: &apos;Mary Smith&apos;, age: 42}, {name: &apos;Peter Pan&apos;, age: 15}, {name: &apos;Ben Smith&apos;, age: 35}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>true</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="comment">// use _.all</span>
+<span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>Is it true someone is not an adult (younger than 18)?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, age: 54}, {name: &apos;Mary Smith&apos;, age: 42}, {name: &apos;Peter Pan&apos;, age: 15}, {name: &apos;Ben Smith&apos;, age: 35}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>true</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="comment">// use _.some</span>
+<span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>How many people whose favorites include food?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, age: 54, favorites: [&apos;food&apos;, &apos;movies&apos;]},
+ {name: &apos;Mary Smith&apos;, age: 42, favorites: [&apos;food&apos;, &apos;travel&apos;]},
+ {name: &apos;Peter Pan&apos;, age: 15, favorites: [&apos;minecraft&apos;, &apos;pokemo&apos;]},
+ {name: &apos;Ben Smith&apos;, age: 35, favorites: [&apos;craft&apos;, &apos;food&apos;]}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>3</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>Who are over 40 and love travel?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, age: 54, favorites: [&apos;food&apos;, &apos;movies&apos;]},
+ {name: &apos;Mary Smith&apos;, age: 42, favorites: [&apos;food&apos;, &apos;travel&apos;]},
+ {name: &apos;Peter Pan&apos;, age: 15, favorites: [&apos;minecraft&apos;, &apos;pokemo&apos;]},
+ {name: &apos;Joe Johnson&apos;, age: 46, favorites: [&apos;travel&apos;, &apos;movies&apos;]},
+ {name: &apos;Ben Smith&apos;, age: 35, favorites: [&apos;craft&apos;, &apos;food&apos;]}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>[
+  &quot;Mary Smith&quot;,
+  &quot;Joe Johnson&quot;
+]</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>Who is the oldest person loving food?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, age: 54, favorites: [&apos;food&apos;, &apos;movies&apos;]},
+ {name: &apos;Mary Smith&apos;, age: 42, favorites: [&apos;food&apos;, &apos;travel&apos;]},
+ {name: &apos;Peter Pan&apos;, age: 15, favorites: [&apos;minecraft&apos;, &apos;pokemo&apos;]},
+ {name: &apos;Joe Johnson&apos;, age: 46, favorites: [&apos;travel&apos;, &apos;movies&apos;]},
+ {name: &apos;Ben Smith&apos;, age: 35, favorites: [&apos;craft&apos;, &apos;food&apos;]}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>&quot;John Smith&quot;</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>What are all the unique favorites?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, age: 54, favorites: [&apos;food&apos;, &apos;movies&apos;]},
+ {name: &apos;Mary Smith&apos;, age: 42, favorites: [&apos;food&apos;, &apos;travel&apos;]},
+ {name: &apos;Peter Pan&apos;, age: 15, favorites: [&apos;minecraft&apos;, &apos;pokemo&apos;]},
+ {name: &apos;Joe Johnson&apos;, age: 46, favorites: [&apos;travel&apos;, &apos;movies&apos;]},
+ {name: &apos;Ben Smith&apos;, age: 35, favorites: [&apos;craft&apos;, &apos;food&apos;]}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>[
+  &quot;food&quot;,
+  &quot;movies&quot;,
+  &quot;travel&quot;,
+  &quot;minecraft&quot;,
+  &quot;pokemo&quot;,
+  &quot;craft&quot;
+]</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="comment">// hint: use _.pluck, _.uniq, _.flatten in some order</span>
+
+<span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
+<p></p><h2>What are all the unique last names?</h2><div class="lodashexercise">   <div class="result"></div><div class="section-title">Data</div><pre>[{name: &apos;John Smith&apos;, age: 54, favorites: [&apos;food&apos;, &apos;movies&apos;]},
+ {name: &apos;Mary Smith&apos;, age: 42, favorites: [&apos;food&apos;, &apos;travel&apos;]},
+ {name: &apos;Peter Pan&apos;, age: 15, favorites: [&apos;minecraft&apos;, &apos;pokemo&apos;]},
+ {name: &apos;Joe Johnson&apos;, age: 46, favorites: [&apos;travel&apos;, &apos;movies&apos;]},
+ {name: &apos;Ben Smith&apos;, age: 35, favorites: [&apos;craft&apos;, &apos;food&apos;]}]</pre><div class="output"><div class="left"><div class="section-title">Expected Output<pre>[
+  &quot;Smith&quot;,
+  &quot;Pan&quot;,
+  &quot;Johnson&quot;
+]</pre></div></div><div class="right"><div class="section-title">Actual Output<pre>&quot;not done&quot;</pre></div></div></div><div class="section-title">Solution</div><pre><span class="keyword">var</span> result = <span class="string">&apos;not done&apos;</span>
+<span class="keyword">return</span> result</pre></div><p></p>
 
                     
                     </section>
@@ -929,10 +948,10 @@
         </div>
 
         
-        <a href="../../hackathons/classmates/index.html" class="navigation navigation-prev " aria-label="Previous page: Classmates"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week3/github-api.html" class="navigation navigation-prev " aria-label="Previous page: Github API"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/classmates/warmup.html" class="navigation navigation-next " aria-label="Next page: Warmup"><i class="fa fa-angle-right"></i></a>
+        <a href="../../learning/week3/lodash-groupby.html" class="navigation navigation-next " aria-label="Next page: Lodash GroupBy"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

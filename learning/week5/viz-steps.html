@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Data | book</title>
+        <title>Viz Intro | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/warmup.html" />
+    <link rel="next" href="../../learning/week5/viz-drills.html" />
     
     
-    <link rel="prev" href="../../hackathons/classmates/index.html" />
+    <link rel="prev" href="../../learning/week5/birdstrike-report.html" />
     
 
         <!-- head:end -->
@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.1" data-basepath="../.." data-revision="Sun Sep 27 2015 23:15:27 GMT-0600 (MDT)">
+    <div class="book" data-level="1.6.2" data-basepath="../.." data-revision="Sun Sep 27 2015 23:15:27 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -418,7 +418,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+        <li class="chapter active" data-level="1.6.2" data-path="learning/week5/viz-steps.html">
             
                 
                     <a href="../../learning/week5/viz-steps.html">
@@ -556,7 +556,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.2.1" data-path="hackathons/classmates/data.html">
+        <li class="chapter " data-level="2.2.1" data-path="hackathons/classmates/data.html">
             
                 
                     <a href="../../hackathons/classmates/data.html">
@@ -818,107 +818,314 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="data">Data</h1>
-<p>There are 26 comments.</p>
-<p>The raw data is in the JSON format and is shown below.</p>
+                        <h1 id="data-to-viz-in-four-steps">Data to Viz in Four Steps</h1>
+<p>This week&apos;s learning objective is to become familiar with the basic
+four-step process of going from data to visualization.</p>
+<ul>
+<li>Load Data</li>
+<li>Template</li>
+<li>Map</li>
+<li>Populate</li>
+</ul>
+<p>Study the following example carefully.</p>
+<h3 id="step-1-load-data">Step 1: Load Data</h3>
+<p><pre><code>data.countries = [{name: &apos;China&apos;, pop: 1393783836},
+ {name: &apos;India&apos;, pop: 1267401849},
+ {name: &apos;USA&apos;, pop: 322583006},
+ {name: &apos;Indonesia&apos;, pop: 25281224}]</code></pre></p>
+<h3 id="step-2-template">Step 2: Template</h3>
+<p>For each data point, think about how we want to visualize it. In particular, we
+define how to map a data attribute to a visual attribute. In this simplest
+example, we are mapping the <em>order</em> (<em>i</em>-th) data attribute to the <em>x</em> visual attribute
+of a rectangle.</p>
+<p></p><h4>template.foo</h4> <pre><code>&lt;rect x=&quot;${d.x}&quot;
+     width=&quot;20&quot;
+     height=&quot;100&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;</code></pre><p></p>
+<p>There is a special object <code>template</code> that holds user-defined template strings.
+Note that a name of this particular template string is set to be <code>foo</code>. The
+content of the string can be accessed by <code>template.foo</code> in a code block.</p>
+<h3 id="step-3-map">Step 3: Map</h3>
+<p>Next, for each data point, we want to map it to a <em>viz</em> object that defines
+the attribute values we like to populate the template with. In this simplest
+example, there&apos;s only one attribute, <em>x</em>.</p>
+<p><pre><code>function computeX(d, i) {
+    return i * 20
+}
+
+data.viz = _.map(data.countries, function(d, i){
+        return {
+            x: computeX(d, i)
+        }    
+    })</code></pre></p>
+<p>We obtain the following array of data objects.</p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">[
  {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133203904&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133203904&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133203904,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;willzfarmer&quot;,
-   &quot;id&quot;: 546524,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/546524?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/willzfarmer&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/willzfarmer&quot;,
-   &quot;followers_url&quot;: &quot;https://api.github.com/users/willzfarmer/followers&quot;,
-   &quot;following_url&quot;: &quot;https://api.github.com/users/willzfarmer/following{/other_user}&quot;,
-   &quot;gists_url&quot;: &quot;https://api.github.com/users/willzfarmer/gists{/gist_id}&quot;,
-   &quot;starred_url&quot;: &quot;https://api.github.com/users/willzfarmer/starred{/owner}{/repo}&quot;,
-   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/willzfarmer/subscriptions&quot;,
-   &quot;organizations_url&quot;: &quot;https://api.github.com/users/willzfarmer/orgs&quot;,
-   &quot;repos_url&quot;: &quot;https://api.github.com/users/willzfarmer/repos&quot;,
-   &quot;events_url&quot;: &quot;https://api.github.com/users/willzfarmer/events{/privacy}&quot;,
-   &quot;received_events_url&quot;: &quot;https://api.github.com/users/willzfarmer/received_events&quot;,
-   &quot;type&quot;: &quot;User&quot;,
-   &quot;site_admin&quot;: false
-  },
-  &quot;created_at&quot;: &quot;2015-08-20T22:39:50Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-08-20T22:39:50Z&quot;,
-  &quot;body&quot;: &quot;Name: William Farmer\r\nMajor: Applied Math w/ Minor in Computer Science\r\nFavorite Programming Language: Python\r\nFavorite Food: Sushi&quot;
+  &quot;x&quot;: 0
  },
  {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133227037&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133227037&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133227037,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;twagar95&quot;,
-   &quot;id&quot;: 10174237,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/10174237?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/twagar95&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/twagar95&quot;,
-   &quot;followers_url&quot;: &quot;https://api.github.com/users/twagar95/followers&quot;,
-   &quot;following_url&quot;: &quot;https://api.github.com/users/twagar95/following{/other_user}&quot;,
-   &quot;gists_url&quot;: &quot;https://api.github.com/users/twagar95/gists{/gist_id}&quot;,
-   &quot;starred_url&quot;: &quot;https://api.github.com/users/twagar95/starred{/owner}{/repo}&quot;,
-   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/twagar95/subscriptions&quot;,
-   &quot;organizations_url&quot;: &quot;https://api.github.com/users/twagar95/orgs&quot;,
-   &quot;repos_url&quot;: &quot;https://api.github.com/users/twagar95/repos&quot;,
-   &quot;events_url&quot;: &quot;https://api.github.com/users/twagar95/events{/privacy}&quot;,
-   &quot;received_events_url&quot;: &quot;https://api.github.com/users/twagar95/received_events&quot;,
-   &quot;type&quot;: &quot;User&quot;,
-   &quot;site_admin&quot;: false
-  },
-  &quot;created_at&quot;: &quot;2015-08-21T00:32:27Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-08-21T00:32:27Z&quot;,
-  &quot;body&quot;: &quot;Name: Tristan Wagar\r\nMajor: Computer Science\r\nFavorite Programming Language: Javascript\r\nFavorite Food: Steak&quot;
+  &quot;x&quot;: 20
  },
  {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133571232&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133571232&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133571232,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;Malaokia&quot;,
-   &quot;id&quot;: 10319733,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/10319733?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/Malaokia&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/Malaokia&quot;,
-   &quot;followers_url&quot;: &quot;https://api.github.com/users/Malaokia/followers&quot;,
-   &quot;following_url&quot;: &quot;https://api.github.com/users/Malaokia/following{/other_user}&quot;,
-   &quot;gists_url&quot;: &quot;https://api.github.com/users/Malaokia/gists{/gist_id}&quot;,
-   &quot;starred_url&quot;: &quot;https://api.github.com/users/Malaokia/starred{/owner}{/repo}&quot;,
-   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/Malaokia/subscriptions&quot;,
-   &quot;organizations_url&quot;: &quot;https://api.github.com/users/Malaokia/orgs&quot;,
-   &quot;repos_url&quot;: &quot;https://api.github.com/users/Malaokia/repos&quot;,
-   &quot;events_url&quot;: &quot;https://api.github.com/users/Malaokia/events{/privacy}&quot;,
-   &quot;received_events_url&quot;: &quot;https://api.github.com/users/Malaokia/received_events&quot;,
-   &quot;type&quot;: &quot;User&quot;,
-   &quot;site_admin&quot;: false
-  },
-  &quot;created_at&quot;: &quot;2015-08-21T21:44:26Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-08-21T21:44:26Z&quot;,
-  &quot;body&quot;: &quot;Name: Mingqi Liew\r\nMajor: Computer Science\r\nFavorite Programming Language: C\r\nFavorite Food: Thai food&quot;
+  &quot;x&quot;: 40
  },
  {
-  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133776171&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133776171&quot;,
-  &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
-  &quot;id&quot;: 133776171,
-  &quot;user&quot;: {
-   &quot;login&quot;: &quot;fadhilfath&quot;,
-   &quot;id&quot;: 5599246,
-   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/5599246?v=3&quot;,
-   &quot;gravatar_id&quot;: &quot;&quot;,
-   &quot;url&quot;: &quot;https://api.github.com/users/fadhilfath&quot;,
-   &quot;html_url&quot;: &quot;https://github.com/fadhilfath&quot;,
-   &quot;followers_url&quot;: &quot;https://api.githu</pre>
+  &quot;x&quot;: 60
+ }
+]</pre>
+
+<h3 id="step-4-populate">Step 4: Populate</h3>
+<p>The final step is to populate the template with the viz data calculated earlier.</p>
+<p><pre><code>// compile the template.foo into a template function
+var compiled = _.template(template.foo)
+
+var result = _.map(data.viz, function(d){
+        // invoke the compiled template function on each viz data
+        return compiled({d: d})
+    })
+return result.join(&apos;\n&apos;)</code></pre></p>
+<p>The resulting svg tags are rendered as below</p>
+<div style="border:1px solid grey; padding:5px;"><svg height="500" width="800">
+
+<rect x="0" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+
+
+
+<rect x="20" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+
+
+
+<rect x="40" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+
+
+
+<rect x="60" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+</svg><pre><code>
+
+
+&lt;rect x=&quot;0&quot;
+     width=&quot;20&quot;
+     height=&quot;100&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+
+
+&lt;rect x=&quot;20&quot;
+     width=&quot;20&quot;
+     height=&quot;100&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+
+
+&lt;rect x=&quot;40&quot;
+     width=&quot;20&quot;
+     height=&quot;100&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+
+
+&lt;rect x=&quot;60&quot;
+     width=&quot;20&quot;
+     height=&quot;100&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+</code></pre></div>
+
+<h1 id="your-turn">Your Turn</h1>
+<p>Now it is your turn. The following exercises are incomplete. Your learning
+task is to add code to complete each exercise.</p>
+<h2 id="exercise-1-use-the-height-of-each-bar-to-represent-population">Exercise 1. Use the height of each bar to represent population</h2>
+<h3 id="step-1-import-data">Step 1: Import Data</h3>
+<p><pre><code>data.countries = [{name: &apos;China&apos;, pop: 1393783836},
+ {name: &apos;India&apos;, pop: 1267401849},
+ {name: &apos;USA&apos;, pop: 322583006},
+ {name: &apos;Indonesia&apos;, pop: 25281224}]</code></pre></p>
+<h3 id="step-2-define-mappers">Step 2: Define Mappers</h3>
+<p><pre><code>function computeX(d, i) {
+    return i * 20
+}
+
+function computeHeight(d, i){
+    return d.pop/10000000
+}
+
+data.viz = _.map(data.countries, function(d, i){
+        return {
+            x: computeX(d, i),
+            height: computeHeight(d, i)
+        }    
+    })</code></pre></p>
+<h3 id="step-3-template">Step 3: Template</h3>
+<p></p><h4>template.foo</h4> <pre><code>&lt;rect x=&quot;${d.x}&quot;
+     width=&quot;20&quot;
+     height=&quot;${d.height}&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;</code></pre><p></p>
+<h3 id="step-4-populate">Step 4: Populate</h3>
+<p><pre><code>// compile the template.foo into a template function
+var compiled = _.template(template.foo)
+
+var result = _.map(data.viz, function(d){
+        // invoke the compiled template function on each viz data
+        return compiled({d: d})
+    })
+return result.join(&apos;\n&apos;)</code></pre></p>
+<p>The resulting svg tags are rendered as below</p>
+<div style="border:1px solid grey; padding:5px;"><svg height="500" width="800">
+
+<rect x="0" width="20" height="139.3783836" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+
+
+
+<rect x="20" width="20" height="126.7401849" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+
+
+
+<rect x="40" width="20" height="32.2583006" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+
+
+
+<rect x="60" width="20" height="2.5281224" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+</svg><pre><code>
+
+
+&lt;rect x=&quot;0&quot;
+     width=&quot;20&quot;
+     height=&quot;139.3783836&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+
+
+&lt;rect x=&quot;20&quot;
+     width=&quot;20&quot;
+     height=&quot;126.7401849&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+
+
+&lt;rect x=&quot;40&quot;
+     width=&quot;20&quot;
+     height=&quot;32.2583006&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+
+
+&lt;rect x=&quot;60&quot;
+     width=&quot;20&quot;
+     height=&quot;2.5281224&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+</code></pre></div>
+
+<h2 id="exercise-2-use-both-the-height-and-width-of-each-bar-to-represent-population">Exercise 2. Use both the height and width of each bar to represent population</h2>
+<h3 id="step-1-import-data">Step 1: Import Data</h3>
+<p><pre><code>data.countries = [{name: &apos;China&apos;, pop: 1393783836},
+ {name: &apos;India&apos;, pop: 1267401849},
+ {name: &apos;USA&apos;, pop: 322583006},
+ {name: &apos;Indonesia&apos;, pop: 25281224}]</code></pre></p>
+<h3 id="step-2-define-mappers">Step 2: Define Mappers</h3>
+<p><pre><code>function computeX(d, i) {
+    return i * 200
+}
+
+function computeHeight(d, i){
+    return d.pop/10000000
+}
+function computeWidth(d, i){
+    return d.pop/10000000
+}
+
+
+data.viz = _.map(data.countries, function(d, i){
+        return {
+            x: computeX(d, i),
+            height: computeHeight(d, i),
+            width: computeWidth(d, i)
+        }    
+    })</code></pre></p>
+<h3 id="step-3-template">Step 3: Template</h3>
+<p></p><h4>template.foo</h4> <pre><code>&lt;rect x=&quot;${d.x}&quot;
+     width=&quot;${d.height}&quot;
+     height=&quot;${d.width}&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;</code></pre><p></p>
+<h3 id="step-4-populate">Step 4: Populate</h3>
+<p><pre><code>// compile the template.foo into a template function
+var compiled = _.template(template.foo)
+
+var result = _.map(data.viz, function(d){
+        // invoke the compiled template function on each viz data
+        return compiled({d: d})
+    })
+return result.join(&apos;\n&apos;)</code></pre></p>
+<p>The resulting svg tags are rendered as below</p>
+<div style="border:1px solid grey; padding:5px;"><svg height="500" width="800">
+
+<rect x="0" width="139.3783836" height="139.3783836" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+
+
+
+<rect x="200" width="126.7401849" height="126.7401849" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+
+
+
+<rect x="400" width="32.2583006" height="32.2583006" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+
+
+
+<rect x="600" width="2.5281224" height="2.5281224" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+
+</svg><pre><code>
+
+
+&lt;rect x=&quot;0&quot;
+     width=&quot;139.3783836&quot;
+     height=&quot;139.3783836&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+
+
+&lt;rect x=&quot;200&quot;
+     width=&quot;126.7401849&quot;
+     height=&quot;126.7401849&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+
+
+&lt;rect x=&quot;400&quot;
+     width=&quot;32.2583006&quot;
+     height=&quot;32.2583006&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+
+
+&lt;rect x=&quot;600&quot;
+     width=&quot;2.5281224&quot;
+     height=&quot;2.5281224&quot;
+     style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+
+
+</code></pre></div>
 
                     
                     </section>
@@ -929,10 +1136,10 @@
         </div>
 
         
-        <a href="../../hackathons/classmates/index.html" class="navigation navigation-prev " aria-label="Previous page: Classmates"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week5/birdstrike-report.html" class="navigation navigation-prev " aria-label="Previous page: Birdstrike Report"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/classmates/warmup.html" class="navigation navigation-next " aria-label="Next page: Warmup"><i class="fa fa-angle-right"></i></a>
+        <a href="../../learning/week5/viz-drills.html" class="navigation navigation-next " aria-label="Next page: Viz Drills"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
