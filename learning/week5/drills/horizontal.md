@@ -22,7 +22,7 @@ function computeHeight(d, i) {
 }
 
 function computeWidth(d, i) {
-    return 20 * i + 100
+    return d.pop * (300 / 1393783836)
 }
 
 function computeY(d, i) {
@@ -61,7 +61,6 @@ return result.join('\n')
             stroke:rgb(0,0,0)" />
 
 {% output %}
-
 <rect x="0"
       y="0"
      width="300"

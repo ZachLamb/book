@@ -2,7 +2,7 @@
 
 {% title %}
 
-Compare attacks as a horizontal barchart
+Place a label to the left of each bar
 
 {% data %}
 [
@@ -80,11 +80,11 @@ Compare attacks as a horizontal barchart
 {% solution %}
 
 function computeX(d, i) {
-    return 0
+    return 120
 }
 
 function computeWidth(d, i) {
-    return i * 20 + 50
+    return d.Attack
 }
 
 function computeY(d, i) {
@@ -95,12 +95,17 @@ function computeColor(d, i) {
     return 'red'
 }
 
+function computeLabel(d, i) {
+    return d.Name
+}
+
 var viz = _.map(data, function(d, i){
             return {
                 x: computeX(d, i),
                 y: computeY(d, i),
                 width: computeWidth(d, i),
-                color: computeColor(d, i)
+                color: computeColor(d, i),
+                label: computeLabel(d, i)
             }
          })
 console.log(viz)
@@ -113,71 +118,101 @@ return result.join('\n')
 
 {% template %}
 <g transform="translate(0 ${d.y})">
-    <rect
+    <rect   
+         x = "${d.x}"      
          width="${d.width}"
          height="20"
          style="fill:${d.color};
                 stroke-width:3;
                 stroke:rgb(0,0,0)" />
+    <text  transform="translate(0 15)">${d.label}</text>
 </g>
 
 {% output %}
 
 <g transform="translate(0 0)">
     <rect
+         x="120"
          width="48"
          height="20"
          style="fill:red;
                 stroke-width:3;
                 stroke:rgb(0,0,0)" />
+    <text transform="translate(0 15)">
+        Squirtle
+    </text>
 </g>
 <g transform="translate(0 20)">
     <rect
+         x="120"
          width="104"
          height="20"
          style="fill:red;
                 stroke-width:3;
                 stroke:rgb(0,0,0)" />
+    <text transform="translate(0 15)">
+        Mega Charizard Y
+    </text>
 </g>
 <g transform="translate(0 40)">
     <rect
+         x="120"
          width="52"
          height="20"
          style="fill:red;
                 stroke-width:3;
                 stroke:rgb(0,0,0)" />
+    <text transform="translate(0 15)">
+        Charmander
+    </text>
 </g>
 <g transform="translate(0 60)">
     <rect
+         x="120"
          width="100"
          height="20"
          style="fill:red;
                 stroke-width:3;
                 stroke:rgb(0,0,0)" />
+    <text transform="translate(0 15)">
+        Mega Venusaur
+    </text>
 </g>
 <g transform="translate(0 80)">
     <rect
+         x="120"
          width="82"
          height="20"
          style="fill:red;
                 stroke-width:3;
                 stroke:rgb(0,0,0)" />
+    <text transform="translate(0 15)">
+        Venusaur
+    </text>
 </g>
 <g transform="translate(0 100)">
     <rect
+         x="120"
          width="62"
          height="20"
          style="fill:red;
                 stroke-width:3;
                 stroke:rgb(0,0,0)" />
+    <text transform="translate(0 15)">
+        Ivysaur
+    </text>
 </g>
 <g transform="translate(0 120)">
     <rect
+         x="120"
          width="49"
          height="20"
          style="fill:red;
                 stroke-width:3;
                 stroke:rgb(0,0,0)" />
+    <text transform="translate(0 15)">
+        Bulbasaur
+    </text>
 </g>
 
 {% endvizexercise %}

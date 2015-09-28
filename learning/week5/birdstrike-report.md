@@ -14,38 +14,40 @@ This time, the data is not already prepared for you in a nice JSON format. You
 will need to do it on your own, replacing the placeholder `birdstrike.json` with
 real data.
 
-# Which airlines have the worst luck with birdstrikes in terms of damage caused?
-This question was asked by (calebhsu).
+This report is prepared by
+* [Kari Santos](https://github.com/karisantos)
+* [Heather Witte](https://github.com/hswitte)
+* [Zachary Lamb](https://github.com/ZachLamb)
+* [Fadhil Suhendi](https://github.com/fadhilfath)
+* [Denis Kazakov](https://github.com/94kazakov)
+
+# which airlines have the worst luck with birdstrikes in terms of damage caused?
 
 {% lodash %}
-var groups = _.groupBy(data, function(n) {
-    return n['Aircraft: Airline/Operator'];
-});
-var i = 0;
+var groups = _.groupBy(data, function(n){
+	return n['Aircraft: Airline/Operator']
+})
+var i = 0
 var costs = _.mapValues(groups, function(d){
-	var total = _.reduce(d, function(total,e){
-		// some of the costs are in quotes and have commas...
-		var cost = e['Cost: Total $'];
+	var total = _.reduce(d, function(total, e){
+		var cost = e['Cost: Total $']
 		if (_.isString(cost)){
-			// remove commas
-			var temp1 = cost.replace(/,/g,'');
-			var temp2 = _.parseInt(temp1);
-			cost = temp2;
+			var temp1 = cost.replace(/,/g,'')
+			var temp2 = _.parseInt(temp1)
+			cost = temp2
 		}
-		return total+cost;
-	},0);
-	return total;
-    
-});
+		return total+cost
+	},0)
+	return total
+})
+var sorted = _.sortBy(_.pairs(costs), function(d){
+	return d[1]
+})
 
-var sorted = _.sortBy(_.pairs(costs), function(d) {
-    return d[1];
-});
-var desc = _(sorted).reverse().value()
-return _.slice(desc,0,10);
+return _.slice(_(sorted).reverse().value(), 0,10)
 {% endlodash %}
 
-Below are the top 10 Airlines with most total costs.
+
 <table><tr><td>Airline</td>
 	<td>Total Cost</td></tr>
 {% for key, value in result %}
@@ -56,25 +58,25 @@ Below are the top 10 Airlines with most total costs.
 {% endfor %}
 </table>
 
-# What is the most common flight phase where a birdstrike occurred?
-This question was asked by (KevinKGifford).
+
+
+# what is the most common flight phase where a birdstrike occurred?
 {% lodash %}
 var groups = _.groupBy(data, function(n) {
-    return n['When: Phase of flight'];
-});
+    return n['When: Phase of flight']
+})
 
 var counts = _.mapValues(groups, function(d){
-    return d.length;
-});
+    return d.length
+})
 var sorted = _.sortBy(_.pairs(counts), function(d) {
-    return d[1];
-});
+    return d[1]
+})
 
-var desc = _(sorted).reverse().value()
-return desc;
+return _.slice(_(sorted).reverse().value(), 0,10)
 {% endlodash %}
 <table><tr><td>Flight Phase</td>
-	<td># Incidents</td></tr>
+	<td>Strike Count</td></tr>
 {% for key, value in result %}
     <tr>
         <td>{{key}}</td>
@@ -83,105 +85,93 @@ return desc;
 {% endfor %}
 </table>
 
-
-# What airports have the most expensive average accident?
-This question was asked by (satchelspencer ).
-
-{% lodash %}
-var groups = _.groupBy(data, function(n) {
-    return n['Airport: Name'];
-});
-var i = 0;
-var costs = _.mapValues(groups, function(d){
-	var avg = _.reduce(d, function(total,e){
-		// some of the costs are in quotes and have commas...
-		var cost = e['Cost: Total $'];
-		if (_.isString(cost)){
-			// remove commas and convert to int
-			var temp1 = cost.replace(/,/g,'');
-			cost = _.parseInt(temp1);			
-		}
-		return total+cost;
-	},0)/_.size(d);
-	return avg;
-});	
-var sorted = _.sortBy(_.pairs(costs), function(d) {
-    return d[1];
-});
-var desc = _(sorted).reverse().value()
-return _.slice(desc,0,10);
-{% endlodash %}
-
-Below are the top 10 Airports with largest average costs.
-<table><tr><td>Airline</td>
-	<td>Total Cost</td></tr>
-{% for key, value in result %}
-    <tr>
-        <td>{{key}}</td>
-        <td>{{value}}</td>
-    </tr>
-{% endfor %}
-</table>
 
 # Which plane strikes the most birds? 
-This question was asked by (twagar95).
 {% lodash %}
 var groups = _.groupBy(data, function(n) {
-    return n['Aircraft: Make/Model'];
-});
+    return n['Aircraft: Make/Model']
+})
 
 var counts = _.mapValues(groups, function(d){
-    return d.length;
-});
-
-var sorted = _.sortBy(_.pairs(counts), function(d) {
-    return d[1];
-});
-
-var desc = _(sorted).reverse().value()
-
-return _.slice(desc, 0,10);
-{% endlodash %}
-The table lists the top 10 aircraft makes that had the most incidents. 
-<table><tr><td>Aircraft Make/Model</td>
-	<td># Incidents</td></tr>
-{% for key, value in result %}
-    <tr>
-        <td>{{key}}</td>
-        <td>{{value}}</td>
-    </tr>
-{% endfor %}
-</table>
-
-
-
-# what state had the highest number of bird strikes?
-This question was asked by (drewdinger).
-{% lodash %}
-var groups = _.groupBy(data, 'Origin State')
-var stateCount = _.mapValues(groups, function(d){
     return d.length
 })
 
-var newStateCount = _.map(stateCount, function(val,key){
-	return {"state": key, "count":val}
+var sorted = _.sortBy(_.pairs(counts), function(d) {
+    return d[1]
 })
 
-_.remove(newStateCount, function(n){
+return _.slice(_(sorted).reverse().value(), 0,10)
+{% endlodash %}
+The table lists the top 10 aircraft makes that had the most incidents. 
+<table><tr><td>Aircraft Make/Model</td>
+	<td>Strike Count</td></tr>
+{% for key, value in result %}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+# what airports have the most expensive average accident?
+
+{% lodash %}
+var groups = _.groupBy(data, function(n) {
+    return n['Airport: Name']
+})
+var i = 0
+var costs = _.mapValues(groups, function(d){
+	var avg = _.reduce(d, function(total,e){
+		var cost = e['Cost: Total $']
+		if (_.isString(cost)){
+			var temp1 = cost.replace(/,/g,'')
+			cost = _.parseInt(temp1)	
+		}
+		return total+cost
+	},0)/_.size(d)
+	return avg
+})
+var sorted = _.sortBy(_.pairs(costs), function(d) {
+    return d[1]
+})
+
+return _.slice(_(sorted).reverse().value(), 0,10)
+{% endlodash %}
+
+<table><tr><td>Airline</td>
+	<td>Total Cost</td></tr>
+{% for key, value in result %}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+
+# what state had the highest number of bird strikes?
+
+{% lodash %}
+var grps = _.groupBy(data, 'Origin State')
+
+var map = _.mapValues(grps, function(d){
+    return d.length
+})
+
+var newvar = _.map(map, function(v,k){
+	return {"state": k, "count":v}
+})
+
+_.remove(newvar, function(n){
  	return n.state == 'N/A'	
 })
 
-var sorted =  _.sortBy(newStateCount, "count").reverse();
-return _.slice(sorted,0,10);
+return _.sortBy(newvar, "count").reverse()
+
 {% endlodash %}
 
-The table lists the top 10 States that had the most incidents. 
-<table><tr><td>State</td>
-	<td># Incidents</td></tr>
+<table><tr><td>State</td><td>Strike Count</td></tr>
 {% for item in result %}
-    <tr>
-        <td>{{item.state}}</td>
-        <td>{{item.count}}</td>
-    </tr>
+<tr> <td>{{item.state}}</td> <td>{{item.count}}</td> </tr>
 {% endfor %}
 </table>
