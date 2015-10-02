@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Report | book</title>
+        <title>Warmup | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../../learning/week2/viz.html" />
+    <link rel="next" href="../../hackathons/open/report.html" />
     
     
-    <link rel="prev" href="../../learning/week2/index.html" />
+    <link rel="prev" href="../../hackathons/open/index.html" />
     
 
         <!-- head:end -->
@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Wed Sep 30 2015 17:07:07 GMT-0600 (MDT)">
+    <div class="book" data-level="2.5.1" data-basepath="../.." data-revision="Wed Sep 30 2015 17:07:07 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -235,7 +235,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="learning/week2/report.html">
+        <li class="chapter " data-level="1.3.1" data-path="learning/week2/report.html">
             
                 
                     <a href="../../learning/week2/report.html">
@@ -790,7 +790,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.5.1" data-path="hackathons/open/warmup.html">
+        <li class="chapter active" data-level="2.5.1" data-path="hackathons/open/warmup.html">
             
                 
                     <a href="../../hackathons/open/warmup.html">
@@ -935,98 +935,175 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="report">Report</h1>
-<p>There are 26 students who gave a self-introduction. As a
-class, we brainstormed and came up with a long list of further questions we can
-ask based on this data. Our team chose to tackle on the following:</p>
-<h1 id="names-of-everyone-s-favorite-languages">Names of everyone&apos;s favorite languages?</h1>
-<p><pre><code>var language_string = &quot;&quot;
-for (i = 0; i &lt; _.size(data.comments); i++) {
-    var text = data.comments[i].body
-    var languages
+                        <h1 id="warmup">Warmup</h1>
+<p>Complete this warmup exercise to get an idea how to put all the different pieces
+together to generate an end-to-end data analysis viz report.</p>
+<p><a name="top"></a></p>
+<div id="autonav"></div>
 
-    function splitString(stringToSplit, separator) {
-        var arrayOfStrings = stringToSplit.split(separator)
-        var language_line = arrayOfStrings[2]
-        var line = language_line.split(&apos;:&apos;)
-        var favorite_language = line[1]
-        var splitline = favorite_language.split(&quot; &quot;)
+<p></p>
+<p></p><h2> <span class="text">What is the distribution of courses across colleges?</span><a href="#top" style="font-size: 14px; float: right;">[top]</a></h2><div class="lodashexercise">   <a name="foo">   </a><div class="output">       <div class="section-title">Viz<svg width="100%" height="400"><rect x="0" y="0" height="20" width="100" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="20" height="20" width="120" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="40" height="20" width="140" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="60" height="20" width="160" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="80" height="20" width="180" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="100" height="20" width="200" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="120" height="20" width="220" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="140" height="20" width="240" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="160" height="20" width="260" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="180" height="20" width="280" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="200" height="20" width="300" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/></svg></div></div><div class="output"><div class="section-title">                <pre><code>&lt;rect x=&quot;0&quot;
+      y=&quot;0&quot;
+      height=&quot;20&quot;
+      width=&quot;100&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;20&quot;
+      height=&quot;20&quot;
+      width=&quot;120&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;40&quot;
+      height=&quot;20&quot;
+      width=&quot;140&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;60&quot;
+      height=&quot;20&quot;
+      width=&quot;160&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;80&quot;
+      height=&quot;20&quot;
+      width=&quot;180&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;100&quot;
+      height=&quot;20&quot;
+      width=&quot;200&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;120&quot;
+      height=&quot;20&quot;
+      width=&quot;220&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;140&quot;
+      height=&quot;20&quot;
+      width=&quot;240&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;160&quot;
+      height=&quot;20&quot;
+      width=&quot;260&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;180&quot;
+      height=&quot;20&quot;
+      width=&quot;280&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;200&quot;
+      height=&quot;20&quot;
+      width=&quot;300&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;</code></pre></div></div><div class="section-title">Solution: SVG Template<pre><code>&lt;rect x=&quot;0&quot;
+      y=&quot;${d.y}&quot;
+      height=&quot;20&quot;
+      width=&quot;${d.width}&quot;
+      style=&quot;fill:${d.color};
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;</code></pre></div><div class="section-title">Solution: Javascript</div><pre><code>var groups = _.groupBy(data, function(d){
+    return d[&apos;CrsPBAColl&apos;]
+})
 
-        if (favorite_language != &quot;&quot;) {
-            return (splitline[1])
-        }
-        else {
-            return &apos;false&apos;
-        }
-    }
+// TODO: add real code to convert groups (which is an object) into an array like below
+// This array should have a lot more elements.
+var counts = _.pairs(groups)
 
-    languages = splitString(text, &apos;\r\n&apos;)
-    if (languages == &quot;JAVA&quot;) {languages = &quot;Java&quot;}
-    language_string += (_.capitalize(languages) + &apos;,&apos;)
+&lt;!-- console.log(counts) --&gt;
+
+// TODO: modify the code below to produce a nice vertical bar charts
+
+function computeX(d, i) {
+    return 0
 }
 
-var array = language_string.split(&apos;,&apos;)
-var saved_array = language_string.split(&apos;,&apos;)
-var new_array = array
-var key = array[0].split()
-var found_keys = key + &apos;,&apos;
-
-while (new_array.length &gt; 1) {
-    new_array = _.difference(array, key)
-    array = new_array
-    key = new_array[0].split()
-    found_keys += (key + &apos;,&apos;)
+function computeHeight(d, i) {
+    return 20
 }
 
-var sort_keys = found_keys.split(&quot;,&quot;)
-var answer = &quot;&quot;
-
-for (var i = 0; i &lt; sort_keys.length; i++) {
-    if (sort_keys[i] != &quot;&quot;) {
-    var count = 0
-        for (var j = 0; j &lt; saved_array.length; j++) {
-            if(saved_array[j] == sort_keys[i]) { count++ }
-        }
-        answer += (sort_keys[i] + &apos;:&apos; + count + &apos; &apos;)
-    }
+function computeWidth(d, i) {
+    return 20 * i + 100
 }
 
-return answer</code></pre></p>
-<p>The most loved languages are Python:10 Javascript:2 C:6 Java:4 Haskell:1 C++:2 C#:1 </p>
-<h1 id="how-many-students-commented-on-the-introduction-before-the-class-started">How many students commented on the Introduction before the class started?</h1>
-<p><pre><code>count = 0
-for (i = 0; i &lt; _.size(data.comments); i++) {
-    var class_start = &quot;2015-08-24T22:00:00&quot;
-    var create_string = _.trimRight(data.comments[i].created_at, &apos;Z&apos;)
-    var update_string = _.trimRight(data.comments[i].updated_at, &apos;Z&apos;)
-    var CreateTime = new Date(create_string)
-    var ClassTime = new Date(class_start)
-
-    if( ( CreateTime.getTime() - ClassTime.getTime() ) &gt; 0 ) { }
-    else { count++ }
+function computeY(d, i) {
+    return 20 * i
 }
-return count</code></pre>
-17 students commented on the Intro before class started.</p>
-<h1 id="how-many-students-updated-their-comments">How many students updated their comments?</h1>
-<p><pre><code>count = 0
-for (i = 0; i &lt; _.size(data.comments); i++) {
-    var create_string = _.trimRight(data.comments[i].created_at, &apos;Z&apos;)
-    var update_string = _.trimRight(data.comments[i].updated_at, &apos;Z&apos;)
 
-    var CreateTime = new Date(create_string)
-    var UpdateTime = new Date(update_string)
-
-    if( ( UpdateTime.getTime() - CreateTime.getTime() ) &gt; 0 ) { count++ }
-    else { }
+function computeColor(d, i) {
+    return &apos;red&apos;
 }
-return count</code></pre></p>
-<p>2 students have updated their comments.</p>
-<h1 id="how-many-are-computer-science-majors">How many are computer science majors?</h1>
-<p><pre><code>var text = _.pluck(data.comments, &apos;body&apos;) 
-var bodies = _.filter(text, function(str) { return str.indexOf(&apos;Computer Science&apos;) &gt; 0 }); 
-return ((bodies.length /26.00) * 100.00).toPrecision(2);</code></pre></p>
-<p>62% are Computer Science majors.</p>
-<p>We found that a majority of students loved Python. More than half the class commented before the start of class. Only a small percentage updated their comments ,and that a majority of the class are CS majors (Surprise!).</p>
+
+var viz = _.map(counts, function(d, i){
+            return {
+                x: computeX(d, i),
+                y: computeY(d, i),
+                height: computeHeight(d, i),
+                width: computeWidth(d, i),
+                color: computeColor(d, i)
+            }
+         })
+console.log(viz)
+
+var result = _.map(viz, function(d){
+         // invoke the compiled template function on each viz data
+         return template({d: d})
+     })
+return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Console<div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;x&quot;:0,&quot;y&quot;:0,&quot;height&quot;:20,&quot;width&quot;:100,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:20,&quot;height&quot;:20,&quot;width&quot;:120,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:40,&quot;height&quot;:20,&quot;width&quot;:140,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:60,&quot;height&quot;:20,&quot;width&quot;:160,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:80,&quot;height&quot;:20,&quot;width&quot;:180,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:100,&quot;height&quot;:20,&quot;width&quot;:200,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:120,&quot;height&quot;:20,&quot;width&quot;:220,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:140,&quot;height&quot;:20,&quot;width&quot;:240,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:160,&quot;height&quot;:20,&quot;width&quot;:260,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:180,&quot;height&quot;:20,&quot;width&quot;:280,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:200,&quot;height&quot;:20,&quot;width&quot;:300,&quot;color&quot;:&quot;red&quot;}]</span></div></div></div><p></p>
 
                     
                     </section>
@@ -1037,10 +1114,10 @@ return ((bodies.length /26.00) * 100.00).toPrecision(2);</code></pre></p>
         </div>
 
         
-        <a href="../../learning/week2/index.html" class="navigation navigation-prev " aria-label="Previous page: Week 2"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/open/index.html" class="navigation navigation-prev " aria-label="Previous page: Open"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../learning/week2/viz.html" class="navigation navigation-next " aria-label="Next page: Tableau Viz"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/open/report.html" class="navigation navigation-next " aria-label="Next page: Report"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
