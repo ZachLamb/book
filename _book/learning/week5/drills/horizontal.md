@@ -57,7 +57,7 @@ return result.join('\n')
      width="${d.width}"
      height="${d.height}"
      style="fill:${d.color};
-            stroke-width:3;
+            stroke-width:3; 
             stroke:rgb(0,0,0)" />
 
 {% output %}
