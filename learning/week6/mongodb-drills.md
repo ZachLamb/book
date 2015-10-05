@@ -213,4 +213,4 @@ There are {{ data.length }} apps.
 
 {{ data | json }}
 
-There are {{ data.length }} apps
+There are {{ data.length }} Apps

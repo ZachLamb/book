@@ -109,12 +109,12 @@ return result.join('\n')
 {% endviz %}
 
 {% viz %}
+
 {% title %}
 
-GPA vs College
+GPA vs College 
 
 {% solution %}
- // first I need to remove all entries that don't have an AVG_GRD (I have seen a couple!)
 var graded = _.filter(data,function(d){
     return d.hasOwnProperty("AVG_GRD");
 })
@@ -130,7 +130,6 @@ var gpa = _.map(groups, function(d,key){
     return obj;
 })
 console.log(gpa)
-
 
 function computeX(d, i) {
     return 0
@@ -155,7 +154,7 @@ function computeY(d, i) {
 }
 
 function computeColor(d, i) {
-    return 'red'
+	 return 'blue'
 }
 function computeLabel(d){
     return d.type
@@ -200,7 +199,6 @@ return result.join('\n')
     <text transform="translate(${d.valLabelLoc} 15)">${d.valLabel}</text>
 </g>
 {% endviz %}
-
 
 {% viz %}
 
